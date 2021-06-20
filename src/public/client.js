@@ -72,7 +72,7 @@ const ImageOfTheDay = (apod) => {
     console.log(photodate.getDate(), today.getDate());
 
     console.log(photodate.getDate() === today.getDate());
-    if (!apod || apod.date === today.getDate() ) {
+    if (!apod || apod.date === today.getDate() || apod === '' ) {
         getImageOfTheDay(store)
     }
 
@@ -101,5 +101,5 @@ const getImageOfTheDay = (state) => {
         .then(res => res.json())
         .then(apod => updateStore(store, { apod }))
 
-    return data
+    //return data
 }
